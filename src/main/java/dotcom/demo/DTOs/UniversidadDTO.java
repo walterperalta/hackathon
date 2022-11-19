@@ -1,18 +1,17 @@
 package dotcom.demo.DTOs;
 
-import dotcom.demo.modelos.Materia;
+import dotcom.demo.modelos.Universidad;
 
-public class MateriaDTO {
-
+public class UniversidadDTO {
     private long id;
     private String nombre;
 
-    public MateriaDTO() {
+    public UniversidadDTO() {
     }
 
-    public MateriaDTO(Materia materia){
-        this.id = materia.getIdMateria();
-        this.nombre = materia.getNombre();
+    public UniversidadDTO(Universidad universidad){
+        this.id = universidad.getIdUniversidad();
+        this.nombre = universidad.getNombre();
     }
 
     public long getId() {

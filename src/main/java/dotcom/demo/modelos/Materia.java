@@ -3,8 +3,8 @@ package dotcom.demo.modelos;
 
 public class Materia {
 
-private long id;
-private String nombre;
+    private long idMateria;
+    private String nombre;
 
     public Materia() {
     }
@@ -13,12 +13,12 @@ private String nombre;
         this.nombre = nombre;
     }
 
-    public long getId() {
-        return id;
+    public long getIdMateria() {
+        return idMateria;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setIdMateria(Carrera carrera) {
+        this.idMateria = idMateria;
     }
 
     public String getNombre() {
