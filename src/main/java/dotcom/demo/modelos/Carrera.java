@@ -2,14 +2,9 @@
 package dotcom.demo.modelos;
 
 
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import java.util.ArrayList;
-import java.util.List;
-
 public class Carrera {
  
-private long id;
+private long idCarrera;
 private String nombre;
 
     //@ElementCollection
@@ -27,11 +22,11 @@ private String nombre;
     }
 
     public long d() {
-        return id;
+        return idCarrera;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdCarrera(Universidad universidad) {
+        this.idCarrera = idCarrera;
     }
 
     public String getNombre() {
@@ -42,7 +37,7 @@ private String nombre;
         this.nombre = nombre;
     }
 
-    public long getId() {
-        return id;
+    public long getIdCarrera() {
+        return idCarrera;
     }
 }

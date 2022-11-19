@@ -1,10 +1,17 @@
 package dotcom.demo.modelos;
 
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Universidad {
 
-    private long id;
+    private long idUniversidad;
     private String nombre;
-    //carreras
+
+    @OneToMany(mappedBy="idUniversidad", fetch= FetchType.EAGER)
+    Set<Carrera> carreras = new HashSet<>();
 
 
     public Universidad() {
@@ -14,12 +21,12 @@ public class Universidad {
         this.nombre = nombre;
     }
 
-    public long getId() {
-        return id;
+    public long getIdUniversidad() {
+        return idUniversidad;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setIdUniversidad(Usuario usuario) {
+        this.idUniversidad = idUniversidad;
     }
 
     public String getNombre() {
@@ -29,4 +36,14 @@ public class Universidad {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public Set<Carrera> getCarreras() {
+        return carreras;
+    }
+
+    public void addCarrera(Carrera carrera) {
+        carrera.setIdCarrera(this);
+        carreras.add(carrera);
+    }
+
 }
