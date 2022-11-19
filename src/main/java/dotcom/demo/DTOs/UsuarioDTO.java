@@ -1,6 +1,12 @@
 package dotcom.demo.DTOs;
 
+import dotcom.demo.modelos.Carrera;
+import dotcom.demo.modelos.Universidad;
 import dotcom.demo.modelos.Usuario;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class UsuarioDTO {
 
@@ -10,8 +16,8 @@ public class UsuarioDTO {
     private String username;
     private String correo;
     private String password;
-   // private String carrera;
-   // private String universidad;
+    private Set<CarreraDTO> carreras = new HashSet<>();
+    private Set<UniversidadDTO> universidades = new HashSet<>();
 
     public UsuarioDTO() { };
 
@@ -22,6 +28,8 @@ public class UsuarioDTO {
         this.username = usuario.getUsername();
         this.correo = usuario.getCorreo();
         this.password = usuario.getPassword();
+        this.carreras = usuario.getCarreras().stream().map(carrera -> new CarreraDTO(carrera)).collect(Collectors.toSet());
+        this.universidades = usuario.getUniversidades().stream().map(universidad -> new UniversidadDTO(universidad)).collect(Collectors.toSet());
     }
 
     public long getIdUsuario() {

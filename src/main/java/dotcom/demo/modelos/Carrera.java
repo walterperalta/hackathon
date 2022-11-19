@@ -2,11 +2,18 @@
 package dotcom.demo.modelos;
 
 
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Carrera {
  
-private long idCarrera;
-private String nombre;
+    private long idCarrera;
+    private String nombre;
 
+    @OneToMany(mappedBy="idUsuario", fetch= FetchType.EAGER)
+    Set<Materia> materias = new HashSet<>();
 
 
     public Carrera() {
@@ -40,4 +47,14 @@ private String nombre;
     public long getIdCarrera() {
         return idCarrera;
     }
+
+    public Set<Materia> getMaterias() {
+        return materias;
+    }
+
+    public void addMateria(Materia materia) {
+        materia.setIdMateria(this);
+        materias.add(materia);
+    }
+
 }
