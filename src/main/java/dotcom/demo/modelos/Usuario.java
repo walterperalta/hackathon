@@ -6,6 +6,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 public class Usuario {
     @Id
@@ -33,10 +34,6 @@ public class Usuario {
         this.password = password;
     }
 
-
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
-    }
 
     public String getNombre() {
         return nombre;
