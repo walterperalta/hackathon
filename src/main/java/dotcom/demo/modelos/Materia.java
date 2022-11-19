@@ -29,8 +29,4 @@ private String nombre;
         this.nombre = nombre;
     }
 
-
-
-
-
 }
