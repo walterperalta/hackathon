@@ -19,8 +19,10 @@ public class Usuario {
     private String password;
 
     @OneToMany(mappedBy="idUsuario", fetch= FetchType.EAGER)
-    Set<Universidad> universidades = new HashSet<>();
+    Set<Carrera> carreras = new HashSet<>();
 
+    @OneToMany(mappedBy="idUsuario", fetch= FetchType.EAGER)
+    Set<Universidad> universidades = new HashSet<>();
 
 
 
@@ -85,16 +87,24 @@ public class Usuario {
         return idUsuario;
     }
 
+    public Set<Carrera> getCarreras() {
+        return carreras;
+    }
+
+    public void addCarrera(Carrera carrera) {
+        carrera.setIdCarrera(this);
+        carreras.add(carrera);
+    }
+
+
     public Set<Universidad> getUniversidades() {
         return universidades;
     }
 
-    public void addUnivesidad(Universidad universidad) {
+    public void addUnivesidades(Universidad universidad) {
         universidad.setIdUniversidad(this);
         universidades.add(universidad);
     }
-
-
 
 
     public void regirstrarse(){

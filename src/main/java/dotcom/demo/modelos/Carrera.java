@@ -7,10 +7,6 @@ public class Carrera {
 private long idCarrera;
 private String nombre;
 
-    //@ElementCollection
-    //@Column(name = "payment")
-    //private List<Integer> payments = new ArrayList<>();
-
 
 
     public Carrera() {
@@ -25,7 +21,11 @@ private String nombre;
         return idCarrera;
     }
 
-    public void setIdCarrera(Universidad universidad) {
+    public void setIdCarrera(Usuario usuario) {
+        this.idCarrera = idCarrera;
+    }
+
+    public void setIdCarrera1(Universidad universidad) {
         this.idCarrera = idCarrera;
     }
 

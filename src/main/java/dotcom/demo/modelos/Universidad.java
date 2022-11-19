@@ -42,7 +42,7 @@ public class Universidad {
     }
 
     public void addCarrera(Carrera carrera) {
-        carrera.setIdCarrera(this);
+        carrera.setIdCarrera1(this);
         carreras.add(carrera);
     }
 
