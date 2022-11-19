@@ -2,18 +2,20 @@
 package dotcom.demo.modelos;
 
 
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import java.util.HashSet;
-import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Carrera {
  
-    private long idCarrera;
-    private String nombre;
+private long id;
+private String nombre;
 
-    @OneToMany(mappedBy="idUsuario", fetch= FetchType.EAGER)
-    Set<Materia> materias = new HashSet<>();
+    //@ElementCollection
+    //@Column(name = "payment")
+    //private List<Integer> payments = new ArrayList<>();
+
 
 
     public Carrera() {
@@ -25,15 +27,11 @@ public class Carrera {
     }
 
     public long d() {
-        return idCarrera;
+        return id;
     }
 
-    public void setIdCarrera(Usuario usuario) {
-        this.idCarrera = idCarrera;
-    }
-
-    public void setIdCarrera1(Universidad universidad) {
-        this.idCarrera = idCarrera;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -44,17 +42,7 @@ public class Carrera {
         this.nombre = nombre;
     }
 
-    public long getIdCarrera() {
-        return idCarrera;
+    public long getId() {
+        return id;
     }
-
-    public Set<Materia> getMaterias() {
-        return materias;
-    }
-
-    public void addMateria(Materia materia) {
-        materia.setIdMateria(this);
-        materias.add(materia);
-    }
-
 }

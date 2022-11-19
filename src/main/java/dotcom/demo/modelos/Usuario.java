@@ -3,9 +3,10 @@ package dotcom.demo.modelos;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 public class Usuario {
     @Id
@@ -17,13 +18,8 @@ public class Usuario {
     private String username;
     private String correo;
     private String password;
-
-    @OneToMany(mappedBy="idUsuario", fetch= FetchType.EAGER)
-    Set<Carrera> carreras = new HashSet<>();
-
-    @OneToMany(mappedBy="idUsuario", fetch= FetchType.EAGER)
-    Set<Universidad> universidades = new HashSet<>();
-
+    //private String carrera;
+    //private String universidad;
 
 
     public Usuario() {
@@ -38,10 +34,6 @@ public class Usuario {
         this.password = password;
     }
 
-
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
-    }
 
     public String getNombre() {
         return nombre;
@@ -86,26 +78,6 @@ public class Usuario {
     public long getIdUsuario() {
         return idUsuario;
     }
-
-    public Set<Carrera> getCarreras() {
-        return carreras;
-    }
-
-    public void addCarrera(Carrera carrera) {
-        carrera.setIdCarrera(this);
-        carreras.add(carrera);
-    }
-
-
-    public Set<Universidad> getUniversidades() {
-        return universidades;
-    }
-
-    public void addUnivesidades(Universidad universidad) {
-        universidad.setIdUniversidad(this);
-        universidades.add(universidad);
-    }
-
 
     public void regirstrarse(){
         System.out.println("El ususario"+ nombre +"se registro");

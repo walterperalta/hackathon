@@ -11,7 +11,7 @@ public class CarreraDTO {
     }
 
     public CarreraDTO(Carrera carrera){
-        this.id = carrera.getIdCarrera();
+        this.id = carrera.getId();
         this.nombre = carrera.getNombre();
     }
 

@@ -11,7 +11,7 @@ public class MateriaDTO {
     }
 
     public MateriaDTO(Materia materia){
-        this.id = materia.getIdMateria();
+        this.id = materia.getId();
         this.nombre = materia.getNombre();
     }
 
